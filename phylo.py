@@ -6,8 +6,15 @@ matrix = [
             [21, 30, 0, 28, 39],
             [31, 34, 28, 0, 43],
             [23, 21, 39, 43, 0]
-        ]
+        ]    
+
 trans = [c for c in [chr(x + ord('a')) for x in range(len(matrix))]]
+
+def check_integrity(): 
+    width = len(matrix)
+    for elt in matrix:
+        if len(elt) != width:
+            exit(1)
 
 def print_matrix(iteration):
     print('\n')
@@ -64,7 +71,6 @@ def update_trans(x, y):
 
 
 def main():
-    print(args)
     i = 0
     print('\n')
     print("Table de traduction : ", end='')
