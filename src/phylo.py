@@ -19,7 +19,10 @@ def make_matrix(l):
     global matrix, trans
     matrix = []
     for i in range(0, len(l), width):
-        sublist = list(map(int, l[i:i + width]))
+        try:
+            sublist = list(map(int, l[i:i + width]))
+        except:
+            error("Values must be integers", 10)
         matrix.append(sublist)
     trans = [c for c in [chr(x + ord('a')) for x in range(len(matrix))]]
 
@@ -158,6 +161,10 @@ def print_tree(f):
         print_matrix(i)
     tree = ''.join(c for c in str(trans) if c not in '[]') + ";"
     t=Tree(tree)
+    print('')
+    print("###############")
+    print("  Final tree")
+    print("###############")
     print(t)
 
 
