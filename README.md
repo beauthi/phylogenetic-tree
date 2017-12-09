@@ -16,7 +16,7 @@ Place the folder wherever you want in your filesystem, and from the root of the 
 
 ```
 pip3 install -r requirements.txt
-echo "alias pypgt=python3 $PWD/src/phylo.py" >> ~/.bashrc
+echo "alias pypgt='python3 $PWD/src/phylo.py'" >> ~/.bashrc
 ```
 
 ## Using
