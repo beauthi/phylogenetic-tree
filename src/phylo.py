@@ -80,8 +80,12 @@ def reduce_matrix(x, y):
     line = matrix[x]
     col = [l[y] for l in matrix]
     # UPGMA
-    line_length = len(trans[x])
-    col_length = len(trans[y])
+    if PARAMETERS['-u']:
+        line_length = len(trans[x])
+        col_length = len(trans[y])
+    else:
+        line_length = 1
+        col_length = 1
 
     new_line = []
     for i, l in enumerate(matrix[x]):
@@ -123,14 +127,14 @@ def parse_parameters(argv):
 
     for parameter in PARAMETERS:
         if parameter in args:
-            PARAMETERS[args[i]] = True
+            PARAMETERS[parameter] = True
             args.pop(args.index(parameter))
 
     if not any(x for x in PARAMETERS.values()):
         error("You must specify a method to use", 7)
 
     if all(PARAMETERS.values()):
-        error("You must specify only one method", 8)
+        error("You must specify only one method :\n-u : UPGMA method\n-w: WPGMA method", 8)
 
     if len(args) == 0:
         error("You must specify at least one file", 9)
