@@ -55,6 +55,14 @@ These files may be of any extension, content must be formatted this way :
 * 9  : no file specified
 * 10 : values in matrix are not integers
 
+## Testing
+
+Example :
+
+```
+pypgt -w examples/simple.phgen # examples folder contains testing files, here I use WPGMA method
+```
+
 ## Miscellaneous
 
 If you spot issues or suggestions, please write it in the issues or email me at thibaut.passilly@epita.fr
