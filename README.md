@@ -22,7 +22,7 @@ echo "alias pypgt=python3 $PWD/src/phylo.py" >> ~/.bashrc
 ## Using
 
 ```
-pypgt option file
+pypgt option files
 ```
 
 ### Input format
@@ -43,16 +43,16 @@ These files may be of any extension, content must be formatted this way :
 
 ### Error codes
 
-* 0 : no error
-* 1 : input file doesn't contain a square matrix;
-* 2 : matrix doesn't contain a diagonal of zeros;
-* 3 : matrix isn't a distance matrix (check [the ref.](https://en.wikipedia.org/wiki/Distance_matrix))
-* 4 : I/O error (input file doesn't exist)
-* 5 : matrix is not square
-* 6 : invalid argument
-* 7 : method not specified (UPGMA, WPGMA...)
-* 8 : two or more methods specified
-* 9 : no file specified
+* 0  : no error
+* 1  : input file doesn't contain a square matrix;
+* 2  : matrix doesn't contain a diagonal of zeros;
+* 3  : matrix isn't a distance matrix (check [the ref.](https://en.wikipedia.org/wiki/Distance_matrix))
+* 4  : I/O error (input file doesn't exist)
+* 5  : matrix is not square
+* 6  : invalid argument
+* 7  : method not specified (UPGMA, WPGMA...)
+* 8  : two or more methods specified
+* 9  : no file specified
 * 10 : values in matrix are not integers
 
 ## Miscellaneous
