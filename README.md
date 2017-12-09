@@ -11,7 +11,7 @@ For the moment, two building agorithms are available :
 
 ## Installation
 
-Place the folder wherever you want in your filesystem, and from root folder launch the following commands:
+Place the folder wherever you want in your filesystem, and from the root of the project launch the following commands:
 
 ```
 pip3 install -r requirements.txt
