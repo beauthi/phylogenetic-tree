@@ -49,10 +49,6 @@ These files may be of any extension, content must be formatted this way :
 * 3  : matrix isn't a distance matrix (check [the ref.](https://en.wikipedia.org/wiki/Distance_matrix))
 * 4  : I/O error (input file doesn't exist)
 * 5  : matrix is not square
-* 6  : invalid argument
-* 7  : method not specified (UPGMA, WPGMA...)
-* 8  : two or more methods specified
-* 9  : no file specified
 * 10 : values in matrix are not integers
 
 ## Testing

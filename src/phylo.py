@@ -3,6 +3,7 @@ from sys import stderr
 from gmpy import is_square
 from math import sqrt
 
+import argparse
 import sys
 
 PARAMETERS = {
@@ -22,7 +23,7 @@ def make_matrix(l):
         try:
             sublist = list(map(int, l[i:i + width]))
         except:
-            error("Values must be integers", 10)
+            error("Values must be integers", 6)
         matrix.append(sublist)
     trans = [c for c in [chr(x + ord('a')) for x in range(len(matrix))]]
 
@@ -120,30 +121,15 @@ def update_trans(x, y):
 
 
 def parse_parameters(argv):
-    args = argv[1:]
-    for i in range(0, len(args)):
-        try:
-            PARAMETERS[args[i]]
-            break
-        except KeyError:
-            error(args[i] + " argument doesn't exist. You must use :\n-u : UPGMA method\n-w : WPGMA method", 6)
-
-    for parameter in PARAMETERS:
-        if parameter in args:
-            PARAMETERS[parameter] = True
-            args.pop(args.index(parameter))
-
-    if not any(x for x in PARAMETERS.values()):
-        error("You must specify a method to use", 7)
-
-    if all(PARAMETERS.values()):
-        error("You must specify only one method :\n-u : UPGMA method\n-w: WPGMA method", 8)
-
-    if len(args) == 0:
-        error("You must specify at least one file", 9)
-
-    return args
-
+    parser = argparse.ArgumentParser(description='Phylogenetic tree creation tool')
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("-w", action='store_true', help='wpgma method')
+    group.add_argument("-u", action='store_true', help='upgma method')
+    parser.add_argument("file", nargs="+", help="Paths of files to analyze")
+    args = parser.parse_args()
+    PARAMETERS['-u'] = args.u
+    PARAMETERS['-w'] = args.w
+    return args.file
 
 def print_tree(f):
     read_file(f)
