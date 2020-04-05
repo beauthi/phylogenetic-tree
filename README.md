@@ -22,7 +22,7 @@ echo "alias pypgt='python3 $PWD/src/phylo.py'" >> ~/.bashrc
 ## Using
 
 ```
-pypgt option files
+pypgt <option> <files>
 ```
 
 ### Input format
