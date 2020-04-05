@@ -49,7 +49,7 @@ These files may be of any extension, content must be formatted this way :
 * 3  : matrix isn't a distance matrix (check [the ref.](https://en.wikipedia.org/wiki/Distance_matrix))
 * 4  : I/O error (input file doesn't exist)
 * 5  : matrix is not square
-* 10 : values in matrix are not integers
+* 6 : values in matrix are not integers
 
 ## Testing
 
